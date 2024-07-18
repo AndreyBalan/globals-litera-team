@@ -1,0 +1,95 @@
+.header {
+    background-color: #fff;
+    @include adaptiveValue("height", 82, 42);
+    // .header__container
+    &__container {
+        max-width: toRem(1350);
+        width: 100%;
+        margin: 0 auto;
+    }
+    // .header__menu
+    &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include adaptiveValue("height", 82, 42);
+    }
+    // .header__contacts
+    &__contacts {
+        display: flex;
+        gap: toRem(12);
+        border-left: 1px solid #8b8b8b;
+        @include adaptiveValue("padding-left", 40, -20);
+        &-text {
+            p {
+                color: #8b8b8b;
+                @include adaptiveValue("font-size", 14, 12);
+            }
+            a {
+                color: #1e1e1e;
+                font-weight: 700;
+                transition: ease 0.3s;
+                @include adaptiveValue("font-size", 16, 14);
+                @include adaptiveValue("margin-top", 8, 4);
+                @media (any-hover: hover) {
+                    &:hover {
+                        color: $blueColor;
+                    }
+                }
+            }
+        }
+        @media (max-width: $mobile) {
+            display: none;
+        }
+    }
+    // content
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: toRem(76);
+        @media (max-width: $tablet) {
+            gap: toRem(40);
+        }
+    }
+    &__logo {
+        @include adaptiveValue("max-width", 102, 80);
+        img {
+            max-width: 100%;
+        }
+    }
+}
+.menu {
+    // .menu__body
+    &__body {
+    }
+    // .menu__list
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: toRem(16);
+        @media (max-width: $tablet) {
+            flex-direction: column;
+        }
+    }
+    // .menu__item
+    &__item {
+        color: #1e1e1e;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        transition: ease 0.3s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $blueColor;
+            }
+        }
+    }
+    // .menu__link
+    &__link {
+    }
+    // .menu__icon
+    &__icon {
+    }
+}
+.icon-menu {
+}

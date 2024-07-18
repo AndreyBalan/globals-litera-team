@@ -1,0 +1,129 @@
+//====================================================================================================
+// Hero
+.hero {
+    background-image: url("@img/hero.jpg");
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    @include adaptiveValue("height", 600, 400);
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+        background-color: #002565;
+        background-image: linear-gradient(270deg, rgba(0, 0, 0, 0.41) 41.32%, rgba(0, 0, 0, 0) 100%),
+            linear-gradient(0deg, rgba(0, 37, 101, 0.6) 0%, rgba(0, 37, 101, 0.6) 100%);
+    }
+    // .hero__container
+    &__container {
+        width: 100%;
+    }
+    // .hero__content
+    &__content {
+        position: relative;
+        max-width: toRem(820);
+        color: $whiteColor;
+    }
+    // .hero__title
+    &__title {
+        font-family: "Judson";
+        font-weight: 700;
+        @include adaptiveValue("font-size", 64, 28);
+    }
+    // .hero__subtitle
+    &__subtitle {
+        font-family: "Judson";
+        font-weight: 700;
+        @include adaptiveValue("font-size", 48, 24);
+    }
+    // .hero__desc
+    &__desc {
+        max-width: toRem(600);
+        line-height: normal;
+        @include adaptiveValue("font-size", 20, 12);
+        @include adaptiveValue("margin-top", 48, 16);
+    }
+}
+//====================================================================================================
+// Services
+.services {
+    @include adaptiveValue("padding-top", 120, 48);
+    @include adaptiveValue("padding-bottom", 60, 24);
+    // .services__container
+    &__container {
+    }
+    // .services__title
+    &__title {
+        color: $blueColor;
+        text-align: center;
+        font-family: "Judson";
+        font-weight: 700;
+        line-height: normal;
+        text-transform: capitalize;
+        @include adaptiveValue("font-size", 48, 20);
+    }
+    // .services__desc
+    &__desc {
+        color: #343434;
+        text-align: center;
+        line-height: normal;
+        @include adaptiveValue("margin-top", 36, 16);
+        @include adaptiveValue("font-size", 24, 12);
+    }
+    // .services__wrapper
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        @include adaptiveValue("gap", 32, 8);
+        @include adaptiveValue("margin-top", 100, 16);
+        @media (max-width: $tablet) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        @media (max-width: $mobile) {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+    }
+    // .services__item
+    &__item {
+        padding: toRem(16);
+        @include adaptiveValue("padding-top", 32, 12);
+        @include adaptiveValue("padding-bottom", 32, 12);
+    }
+    // .services__counter
+    &__counter {
+        color: #bcbcbc;
+        font-size: toRem(40);
+        font-weight: 700;
+    }
+    // .services__subtitle
+    &__subtitle {
+        color: #000;
+        font-weight: 700;
+        @include adaptiveValue("font-size", 20, 16);
+        @include adaptiveValue("margin-top", 16, 12);
+        @include adaptiveValue("margin-bottom", 16, 12);
+    }
+    &__content {
+        color: #000;
+        line-height: normal;
+        @include adaptiveValue("font-size", 16, 12);
+    }
+    &__more {
+        color: $blueColor;
+        font-size: toRem(16);
+        font-weight: 700;
+        transition: ease 0.3s;
+        @include adaptiveValue("margin-top", 24, 16);
+        @media (any-hover: hover) {
+            &:hover {
+                color: #1245a0;
+            }
+        }
+    }
+}
