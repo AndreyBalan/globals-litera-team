@@ -49,6 +49,32 @@
         @include adaptiveValue("font-size", 20, 12);
         @include adaptiveValue("margin-top", 48, 16);
     }
+    &__contacts {
+        display: none;
+        gap: toRem(12);
+        margin-top: toRem(16);
+        @media (max-width: $mobile) {
+            display: flex;
+        }
+        &-text {
+            p {
+                color: #8b8b8b;
+                font-size: toRem(12);
+            }
+            a {
+                color: #fff;
+                font-weight: 700;
+                transition: ease 0.3s;
+                font-size: toRem(12);
+                margin-top: toRem(4);
+                @media (any-hover: hover) {
+                    &:hover {
+                        color: $blueColor;
+                    }
+                }
+            }
+        }
+    }
 }
 //====================================================================================================
 // Services
@@ -127,3 +153,306 @@
         }
     }
 }
+//========================================================================================================================================================
+// About
+.about {
+    @include adaptiveValue("padding-bottom", 120, 48);
+    @include adaptiveValue("padding-top", 60, 24);
+    // .about__container
+    &__container {
+    }
+    // .about__title
+    &__title {
+        color: $blueColor;
+        text-align: center;
+        font-family: "Judson";
+        font-weight: 700;
+        text-transform: capitalize;
+        @include adaptiveValue("font-size", 48, 20);
+    }
+    // .about__wrapper
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        @include adaptiveValue("gap", 64, 16);
+        @include adaptiveValue("margin-top", 100, 16);
+        @media (max-width: $tablet) {
+            flex-wrap: wrap;
+        }
+    }
+    // .about__img
+    &__img {
+        max-width: toRem(430);
+        width: 100%;
+        @media (max-width: $tablet) {
+            max-width: 100%;
+            max-height: toRem(337);
+            img {
+                max-height: toRem(337);
+            }
+        }
+        @media (max-width: $mobile) {
+        }
+        img {
+            width: 100%;
+        }
+    }
+    // .about__content
+    &__content {
+        max-width: toRem(630);
+        @media (max-width: $tablet) {
+            max-width: 100%;
+        }
+    }
+    // .about__subtitle
+    &__subtitle {
+        color: #000;
+        font-family: "Judson";
+        font-weight: 700;
+        @include adaptiveValue("font-size", 36, 16);
+    }
+    // .about__descr
+    &__descr {
+        color: #000;
+        line-height: normal;
+        @include adaptiveValue("font-size", 20, 12);
+        @include adaptiveValue("margin-top", 24, 8);
+    }
+}
+//========================================================================================================================================================
+// Contact
+.contact {
+    background-image: url("@img/contact.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: toRem(680);
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+        background-color: #002565;
+        background-image: linear-gradient(270deg, rgba(0, 0, 0, 0.41) 41.32%, rgba(0, 0, 0, 0) 100%),
+            linear-gradient(0deg, rgba(0, 37, 101, 0.6) 0%, rgba(0, 37, 101, 0.6) 100%);
+    }
+    // .contact__container
+    &__container {
+        position: relative;
+    }
+    // .contact__title
+    &__title {
+        color: #fff;
+        text-align: center;
+        font-family: "Judson";
+        font-weight: 700;
+        text-transform: capitalize;
+        @include adaptiveValue("font-size", 48, 20);
+        @include adaptiveValue("margin-top", 48, 40);
+    }
+    // .contact__wrapper
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        @include adaptiveValue("gap", 95, 48);
+        @include adaptiveValue("margin-top", 64, 16);
+        @media (max-width: $tablet) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    // .contact__content
+    &__content {
+        max-width: toRem(650);
+        @media (max-width: $tablet) {
+            max-width: 100%;
+        }
+    }
+    // .contact__desc
+    &__desc {
+        color: #fff;
+        font-family: "Judson";
+        line-height: normal;
+        @include adaptiveValue("font-size", 36, 12);
+    }
+    // .contact__list
+    &__list {
+    }
+    // .contact__list-item
+    &__list-item {
+        position: relative;
+        color: #fff;
+        font-weight: 700;
+        line-height: normal;
+        padding-left: toRem(36);
+        @include adaptiveValue("margin-top", 24, 12);
+        @include adaptiveValue("font-size", 20, 14);
+        &::before {
+            content: "";
+            background-image: url("@img/check.svg");
+            left: 0;
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            width: toRem(24);
+            height: toRem(24);
+        }
+    }
+    // .contact__call
+    &__call {
+        display: flex;
+        gap: toRem(12);
+        @include adaptiveValue("margin-top", 48, 24);
+        p {
+            color: #fff;
+            font-weight: 700;
+            line-height: normal;
+            @include adaptiveValue("font-size", 20, 12);
+        }
+        a {
+            color: #fff;
+            font-weight: 700;
+            line-height: normal;
+            transition: ease 0.3s;
+            @include adaptiveValue("font-size", 20, 16);
+            @include adaptiveValue("margin-top", 12, 8);
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $blueColor;
+                }
+            }
+        }
+    }
+    // .contact__form
+    &__form {
+        max-width: toRem(400);
+        border-radius: 8px;
+        border: 1px solid #8a8a8a;
+        background: #fff;
+        padding: toRem(24) toRem(32) toRem(24) toRem(32);
+        @include adaptiveValue("margin-bottom", 64, 120);
+        div {
+            color: #494c50;
+            font-family: "Open Sans";
+            font-size: toRem(14);
+            font-style: normal;
+            font-weight: 400;
+            line-height: toRem(20); /* 142.857% */
+            &:not(:last-child) {
+                margin-top: toRem(12);
+            }
+            &:first-child {
+                margin-top: toRem(0);
+            }
+            input {
+                border-radius: toRem(4);
+                border: toRem(1) solid #8b8b8b;
+                margin-top: toRem(8);
+                font-size: toRem(14);
+                padding: toRem(10) toRem(14) toRem(10) toRem(14);
+            }
+            select {
+                display: block;
+                border-radius: toRem(4);
+                border: toRem(1) solid #8b8b8b;
+                margin-top: toRem(8);
+                font-size: toRem(14);
+                padding: toRem(10) toRem(14) toRem(10) toRem(14);
+                width: 100%;
+                color: #494c50;
+                font-family: "Open Sans";
+                font-size: toRem(14);
+                font-style: normal;
+                font-weight: 400;
+                line-height: toRem(20); /* 142.857% */
+            }
+        }
+    }
+}
+
+.form-btn {
+    border-radius: toRem(6);
+    background: #002a74;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    padding: toRem(12) toRem(48);
+    color: #fff;
+    font-size: toRem(16);
+    font-weight: 700;
+    line-height: toRem(20); /* 125% */
+    margin: 0 auto;
+    margin-top: toRem(32);
+    transition: ease 0.3s;
+    @media (any-hover: hover) {
+        &:hover {
+            background: #1245a0;
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+// form
+// .form {
+//     position: relative;
+//     background-color: #fff;
+//     // .form__line
+//     &__line {
+//         display: flex;
+//         justify-content: space-between;
+//         gap: toRem(20);
+//         div {
+//             width: toRem(315);
+//             @media (max-width: $mobile) {
+//                 width: 100%;
+//             }
+//         }
+//         @media (max-width: $mobile) {
+//             flex-wrap: wrap;
+//         }
+//     }
+// }
+// .form-btn {
+//     background: red;
+//     display: block;
+//     margin: 0 auto;
+//     border-radius: toRem(64);
+//     padding: toRem(16) toRem(24);
+//     color: #fff;
+//     font-weight: 500;
+//     line-height: normal;
+//     transition: all 0.3s;
+//     width: max-content;
+//     justify-content: center;
+//     text-align: center;
+//     @media (any-hover: hover) {
+//         &:hover {
+//             box-shadow: 0px 4px 4px 0px rgba(77, 107, 255, 0.5);
+//         }
+//     }
+// }
+// // tagline
+// .tagline {
+//     padding: toRem(80) toRem(0) toRem(80) toRem(56);
+//     background: red;
+//     background-image: url("@img/tagline-bg.png");
+//     background-repeat: no-repeat;
+//     background-position: right center;
+//     @include adaptiveValue("margin-top", 120, 48);
+//     @include adaptiveValue("margin-bottom", 120, 48);
+//     // .tagline__container
+//     &__container {
+//     }
+//     // .tagline__title
+//     &__title {
+//         color: #fff;
+//         // font-size: 48px;
+//         font-weight: 600;
+//         line-height: normal;
+//         @include adaptiveValue("font-size", 48, 20);
+//     }
+// }

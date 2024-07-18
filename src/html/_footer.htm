@@ -1,4 +1,68 @@
-<footer class="footer">
-	<div class="footer__container">
-	</div>
+<footer class="contact">
+    <div class="contact__container">
+        <h2 class="contact__title">Need a progect?</h2>
+        <div class="contact__wrapper">
+            <div class="contact__content">
+                <p class="contact__desc">
+                    To make requests for further information, contact us via our social channels.
+                </p>
+                <ul class="contact__list">
+                    <li class="contact__list-item">We just need a couple of hours!</li>
+                    <li class="contact__list-item">
+                        No more than 2 working days since receiving your issue ticket.
+                    </li>
+                </ul>
+                <div class="contact__call">
+                    <img src="@img/call.svg" alt="Call" />
+                    <div>
+                        <p>Call for Emergency Assistance</p>
+                        <a href="tel:+40745844454">+40 (745) 844 454</a>
+                    </div>
+                </div>
+            </div>
+            <form
+                class="contact__form"
+                action="files/sendmail/sendmail.php"
+                method="POST"
+                data-popup-message="#form-message"
+                data-dev>
+                <div>
+                    <label for="name">Your name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        data-error="Incorrect name"
+                        data-required
+                        placeholder="Jonathom Doe" />
+                </div>
+                <div>
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        data-required="email"
+                        data-error="Incorrect email"
+                        placeholder="official@globals-litera-team.com" />
+                </div>
+                <div>
+                    <label for="phone">Phone number</label>
+                    <input type="text" name="phone" id="phone" placeholder="+40 (745) 844 454" />
+                </div>
+                <div>
+                    <label for="subject">Subject</label>
+                    <select name="subject" id="subject" type="text">
+                        <option value="chose">Choose Subject</option>
+                        <option value="it">It Solutions Support</option>
+                        <option value="accounting">Accounting Technologies</option>
+                        <option value="support">Support Items</option>
+                        <option value="machine">Machine Language</option>
+                    </select>
+                </div>
+
+                <button class="form-btn" type="submit">Get Free Consultation</button>
+            </form>
+        </div>
+    </div>
 </footer>

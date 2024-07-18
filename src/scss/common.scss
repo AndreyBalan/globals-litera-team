@@ -1,1 +1,41 @@
 // Заголовки, загальні БЕМ блоки та інше...
+// Видалення хрестика в пошуку
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+input[type="search"]::-moz-search-clear-button {
+    display: none;
+}
+// фокус активного інпуту
+input[type="text"] {
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border: 1px solid $blueColor;
+}
+input[type="search"] {
+    outline: none;
+}
+
+input[type="search"]:focus {
+    border: 1px solid $blueColor;
+}
+// Помилки валідації
+.form__error {
+    color: red;
+}
+
+// screen reader
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
