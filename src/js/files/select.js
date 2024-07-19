@@ -14,3 +14,8 @@ selectElement.addEventListener("blur", function () {
     this.classList.remove("open");
     isOpen = false;
 });
+
+selectElement.addEventListener("change", function () {
+    this.classList.remove("open");
+    isOpen = false;
+});
