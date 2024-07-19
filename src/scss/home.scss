@@ -369,6 +369,16 @@
                 font-style: normal;
                 font-weight: 400;
                 line-height: toRem(20); /* 142.857% */
+                background: url("@img/arrow-down.svg") no-repeat;
+                background-position: right toRem(14) top 50%;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                appearance: none;
+                transition: ease 0.3s;
+                &.open {
+                    background: url("@img/arrow-up.svg") no-repeat;
+                    background-position: right 14px top 50%;
+                }
             }
         }
     }
