@@ -228,6 +228,7 @@
     background-repeat: no-repeat;
     position: relative;
     min-height: toRem(680);
+    @include adaptiveValue("padding-bottom", 64, 120);
     &::before {
         content: "";
         position: absolute;
@@ -334,7 +335,7 @@
         border: 1px solid #8a8a8a;
         background: #fff;
         padding: toRem(24) toRem(32) toRem(24) toRem(32);
-        @include adaptiveValue("margin-bottom", 64, 120);
+        // @include adaptiveValue("margin-bottom", 64, 120);
         div {
             color: #494c50;
             font-family: "Open Sans";
